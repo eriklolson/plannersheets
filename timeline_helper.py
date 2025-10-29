@@ -1,0 +1,1 @@
+# generate hours/half hour blocks of day timeline via python loop. 
