@@ -1,4 +1,16 @@
 # ========================================
+# 🧭 Global & Project .gitignore — Erik Olson
+# Covers Python, Micromamba, JetBrains, Direnv, and Jira CLI
+# ========================================
+
+# ========================================
+# Jira CLI (per-project configs)
+# ========================================
+.jira/
+!.jira/config.yml.tmpl     # Keep the template under version control
+!.jira/README.md
+
+# ========================================
 # Byte-compiled / optimized / DLL files
 # ========================================
 __pycache__/
@@ -43,14 +55,16 @@ pip-wheel-metadata/
 .micromamba/
 micromamba_env/
 conda-meta/
+env/
+envs/
 
-# Optional lockfiles (ignore if you generate them dynamically)
+# Optional lockfiles (ignore if generated dynamically)
 *.lock
 
 # ========================================
 # Environment files (optional)
 # ========================================
-# Uncomment to ignore if environment.yml is generated, not maintained
+# Uncomment if you generate these automatically:
 # environment.yml
 # conda-environment.yml
 
@@ -94,7 +108,8 @@ coverage.xml
 # ========================================
 # Jupyter Notebook
 # ========================================
-.ipynb_checkpoints
+.ipynb_checkpoints/
+*.nbconvert.ipynb
 
 # ========================================
 # IDEs and editors
@@ -108,6 +123,13 @@ coverage.xml
 *.sublime-workspace
 
 # ========================================
+# Direnv / Environment Automation
+# ========================================
+.envrc
+.direnv/
+config/dev_context.yaml
+
+# ========================================
 # macOS / Linux / Windows system files
 # ========================================
 .DS_Store
@@ -116,3 +138,24 @@ ehthumbs.db
 Icon?
 Thumbs.db
 desktop.ini
+
+# ========================================
+# Logs / Cache / Temp
+# ========================================
+*.log
+*.tmp
+*.swp
+*~
+.cache/
+logs/
+tmp/
+__tmp__/
+
+# ========================================
+# Backup / Editor artifacts
+# ========================================
+*.bak
+*.old
+*.orig
+*.save
+*.backup
